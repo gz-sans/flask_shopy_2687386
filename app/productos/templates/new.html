@@ -1,0 +1,17 @@
+{% extends 'base.html'  %}
+{% import 'bootstrap/wtf.html'as wft %}
+
+{% block content %}
+
+    <h1>Nuevo Producto </h1>
+    <form 
+        action="" 
+        method="POST" 
+        novalidate
+        enctype="multipart/form-data">
+        {{ wft.quick_form(form) }}
+    </form>
+
+{% endblock %}
+
+
