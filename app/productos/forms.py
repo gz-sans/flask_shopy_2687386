@@ -3,12 +3,15 @@ from wtforms import StringField, IntegerField, SubmitField
 from wtforms.validators import InputRequired, NumberRange
 from flask_wtf.file import FileField,FileRequired,FileAllowed
 
-class NewProductForm(FlaskForm):
-    nombre = StringField("Ingrese nombre del producto:", 
+    
+
+class ProductForm():
+        nombre = StringField("Ingrese nombre del producto:", 
                         validators = [InputRequired(
                             message='nombre requerido'
                         )])
-    precio = IntegerField("Ingrese precio del producto:", 
+
+        precio = IntegerField("Ingrese precio del producto:", 
                         validators = [
                             InputRequired(
                                 message='producto requerido'
@@ -19,6 +22,9 @@ class NewProductForm(FlaskForm):
                                 max = 100000
                             )
                         ])
+
+class NewProductForm(FlaskForm, ProductForm):
+
     imagen = FileField( label="imgen del producto",
                         validators=[
                             FileRequired(
@@ -27,3 +33,7 @@ class NewProductForm(FlaskForm):
                                         message="solo se aceptan archivo png y jpg")
                         ])
     submit = SubmitField("Guardar")
+    
+class editProductForm(FlaskForm,ProductForm):
+    
+    submit = SubmitField("Actualizar")
