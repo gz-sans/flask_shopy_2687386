@@ -11,10 +11,10 @@
         {{mensaje}}
     </div>
     {% endfor %}
-    <h1>Lista de productos</h1>
+    <h1><center>Lista de clientes</center></h1>
     <table class="table table-hoover">
-        <a href="/productos/create" class="btn btn-info">
-            Nuevo producto
+        <a href="/clientes/create" class="btn btn-info">
+            Nuevo cliente
         </a>
         <thead>
             <tr> 
@@ -22,10 +22,10 @@
                     Nombre     
                 </th>
                 <th>
-                    Precio
+                    Contraseña
                 </th>
                 <th>
-                    Imagen
+                    Email
                 </th>
                 <th>
                     Actualizar
@@ -36,24 +36,24 @@
             </tr>
         <thead>
         <tbody>
-            {% for producto in productos %}
+            {% for cliente in clientes %}
             <tr>
                 <td>
-                    {{producto.nombre}}
+                    {{cliente.username}}
                 </td>
                 <td>
-                    {{producto.precio}}
+                    {{cliente.password}}
                 </td>
                 <td>
-                    <img class="img-fluid" src="images/{{producto.imagen}}" henght="100" width="100" >
+                    {{cliente.email}}
                 </td>
                 <td>
-                    <a href="/productos/update/{{producto.id}}" class="btn btn-primary">
+                    <a href="/clientes/update/{{cliente.id}}" class="btn btn-primary">
                         Editar
                     </a>
                 </td>
                 <td>
-                    <a href="/productos/delete/{{producto.id}}" class="btn btn-danger">
+                    <a href="/clientes/delete/{{cliente.id}}" class="btn btn-danger">
                         Eliminar
                     </a>
                 </td>
