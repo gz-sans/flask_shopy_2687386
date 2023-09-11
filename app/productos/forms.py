@@ -4,7 +4,6 @@ from wtforms.validators import InputRequired, NumberRange
 from flask_wtf.file import FileField,FileRequired,FileAllowed
 
     
-
 class ProductForm():
         nombre = StringField("Ingrese nombre del producto:", 
                         validators = [InputRequired(
