@@ -1,21 +1,24 @@
 from flask_wtf import  FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import InputRequired
+from wtforms.validators import InputRequired, Email
 
 
 class ClientForm():
     username = StringField("ingrese su usuario",
-                           validators=[InputRequired(
-                               message="usuario requerido"
-                           )])
+                            validators=[InputRequired(
+                                message="usuario requerido"
+                            )])
     password = StringField("ingrese su contraseña",
-                           validators=[InputRequired(
-                               message="contraseña requerido"
-                           )])
+                            validators=[InputRequired(
+                                message="contraseña requerido"
+                            )])
     email = StringField("ingrese su email",
-                           validators=[InputRequired(
-                               message="rmail requerido"
-                           )])
+                            validators=[InputRequired(
+                                message="email requerido"
+                        ),
+                                        Email(
+                                message="debe tenea un @ y una direccion"
+                        )])
     
 class NewClientForm(FlaskForm,ClientForm):
     submit = SubmitField("Guardar")
