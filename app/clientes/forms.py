@@ -7,7 +7,8 @@ class ClientForm():
     username = StringField("ingrese su usuario",
                             validators=[InputRequired(
                                 message="usuario requerido"
-                            )])
+                            ), 
+                            Length(1,120)])
     password = StringField("ingrese su contraseña",
                             validators=[InputRequired(
                                 message="contraseña requerido"

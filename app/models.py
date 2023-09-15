@@ -1,16 +1,26 @@
-from app import db
+from app import db,login
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
 
-
-
 # entidades del proyecto
-class Cliente(db.Model):
+class Cliente(db.Model, UserMixin):
     __tablename__="clientes"
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(100), unique = True)
-    password = db.Column(db.String(100))
+    password = db.Column(db.String(120))
     email = db.Column(db.String(100), unique = True)
+    
+    def setPassword(self,password):
+        self.password = generate_password_hash(password)
+        
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
+@login.user_loader
+def load_user(id):
+    return Cliente.query.get(id)
 
 class Producto(db.Model):
     __tablename__="productos"
@@ -31,3 +41,4 @@ class Detalle(db.Model):
     cantidad = db.Column(db.Integer)
     producto_id = db.Column (db.Integer, db.ForeignKey('productos.id'))
     venta_id = db.Column (db.Integer, db.ForeignKey('ventas.id'))
+
