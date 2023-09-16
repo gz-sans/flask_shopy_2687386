@@ -19,14 +19,17 @@ use flask_shopy_2687386;
 from app import db
 from app import Cliente
 
-# Crea un espacio para interactuar con la aplicación
+Crea un espacio para interactuar con la aplicación
+
 app.app_context().push()
 
-# Crea un nuevo cliente y establece la contraseña utilizando el método setPassword
+Crea un nuevo cliente y establece la contraseña utilizando el método setPassword
+
 nuevo_cliente = Cliente(username="gz sans omega", email="gzsans@gmail")
 nuevo_cliente.setPassword("1234")
 
-# Agrega el cliente a la base de datos
+Agrega el cliente a la base de datos
+
 db.session.add(nuevo_cliente)
 db.session.commit()
 
