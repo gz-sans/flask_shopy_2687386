@@ -17,16 +17,18 @@ use flask_shopy_2687386;
 
 
 from app import db
+
 from app import Cliente
 
 app.app_context().push()
 
-
 nuevo_cliente = Cliente(username="gz sans omega", email="gzsans@gmail")
+
 nuevo_cliente.setPassword("1234")
 
 
 db.session.add(nuevo_cliente)
+
 db.session.commit()
 
 dependecias faltantes:
