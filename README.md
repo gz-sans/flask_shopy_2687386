@@ -32,6 +32,9 @@ Este es un proyecto de prueba en Python donde se están explorando las práctica
    db.session.add(nuevo_cliente)
    
    db.session.commit()
+   
+## ejecucion
+flask run --app main --debug
 
    
 
