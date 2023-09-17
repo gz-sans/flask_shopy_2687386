@@ -15,7 +15,7 @@ Este es un proyecto de prueba en Python donde se están explorando las práctica
    
    flask db upgrade
    
-3. Crea una base de datos en tu sistema de gestión de bases de datos (por ejemplo, MySQL) con el nombre flask_shopy_2687386.
+3. Crea una base de datos en tu sistema de gestión de bases de datos (En MySQL) con el nombre flask_shopy_2687386.
    
 4. Para crear un usuario de prueba, abre una terminal Python y ejecuta los siguientes comandos:
    
