@@ -17,7 +17,7 @@ create database flask_shopy_2687386;
 
 use flask_shopy_2687386;
 
-#crear usuario
+# crear usuario
 
 from app import db
 
